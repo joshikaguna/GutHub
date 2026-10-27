@@ -1,0 +1,65 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #182B2A; /* Deep Charcoal */
+    background-color: #F7F6F0; /* Warm Ivory */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #DCEFE7; /* Soft Sage */
+    color: #103B35; /* Deep Midnight Green */
+  }
+}
+
+/* Elegant scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DCEFE7;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #68DCC0;
+}
+
+/* Subtle pulse for active sensor signals with Aurora Mint */
+@keyframes subtle-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.06);
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Print optimizations for Doctor Summary Sheet */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  .print\:hidden {
+    display: none !important;
+  }
+}
